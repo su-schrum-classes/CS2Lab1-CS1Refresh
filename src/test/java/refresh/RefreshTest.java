@@ -286,7 +286,10 @@ class RefreshTest {
 
     @Test
     void testExercise19() {
-        
+        assertEquals(100.0, Refresh.exercise19(new double[]{100.0}));
+        assertEquals(-100.0, Refresh.exercise19(new double[]{-100.0}));
+        assertEquals(456, Refresh.exercise19(new double[]{1,2,3,6,456,100.0,3,34}));
+        assertEquals(-1, Refresh.exercise19(new double[]{-1,-2,-3,-6,-456,-100.0,-3,-34}));
     }
 
     @Test
