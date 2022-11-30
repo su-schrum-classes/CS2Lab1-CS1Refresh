@@ -9,14 +9,14 @@ public class Refresh {
      * Prints "Hello World!" to the console
      */
     public static void exercise1() {
-        
+
     }
 
     /**
      * Print the square root of 23 to the console
      */
     public static void exercise2() {
-
+    
     }
 
     /**
@@ -24,7 +24,7 @@ public class Refresh {
      * each on its own line to the console.
      */
     public static void exercise3() {
-
+    
     }
 
     /**
@@ -33,7 +33,7 @@ public class Refresh {
      * followed by a carriage return.
      */
     public static void exercise4() {
-
+    
     }
 
     /**
@@ -44,7 +44,7 @@ public class Refresh {
      * @param y first double parameter
      */
     public static void exercise5(double x, double y) {
-
+    
     }
 
     /**
@@ -55,7 +55,7 @@ public class Refresh {
      * @return sum of x and y
      */
     public static double exercise6(double x, double y) {
-        return -1; // TODO: Change the return value
+        return -1; // TODO: Change return value
     }
 
     /**
@@ -63,7 +63,7 @@ public class Refresh {
      * square of asterisks
      */
     public static void exercise7() {
-
+    
     }
 
     /**
@@ -73,7 +73,7 @@ public class Refresh {
      * @param height number of rows worth of asterisks to print
      */
     public static void exercise8(int width, int height) {
-
+    
     }    
 
     /**
@@ -91,7 +91,7 @@ public class Refresh {
      * - A method getArea() that returns the area
      */
     public static class Rectangle { // exercise9
-        // TODO: Add constructor and methods described above
+    
     }    
 
     /**
@@ -101,7 +101,7 @@ public class Refresh {
      * @param arr array of integers
      */
     public static void exercise10(int[] arr) {
-
+    
     }
 
     /**
@@ -111,15 +111,16 @@ public class Refresh {
      * @param str String to print vertically
      */
     public static void exercise11(String str) {
-
+    
     }
 
     /**
      * Use a Scanner to read two integers typed by the user 
-     * to the console and print out the result of multiplying them.
+     * to the console (and pressing enter after each) and 
+     * print out the result of multiplying them.
      */
     public static void exercise12() {
-
+    
     }
 
     /**
@@ -129,7 +130,7 @@ public class Refresh {
      * @return sum of elements in the list
      */
     public static int exercise13(ArrayList<Integer> list) {
-        return -1; // TODO: Change this return value
+        return -1; // TODO: Change return value
     }
 
     /**
@@ -141,7 +142,7 @@ public class Refresh {
      * @return factorial of n
      */
     public static int exercise14(int n) {
-        return -1; // TODO: Change this return value
+        return -1; // TODO: Change return value
     }
 
     
@@ -152,7 +153,7 @@ public class Refresh {
      * @param array array of integers
      */
     public static void exercise15(int[] array) {
-
+        
     }
 
     /**
@@ -162,7 +163,7 @@ public class Refresh {
      * @param strings array of Strings
      */
     public static void exercise16(String[] strings) {
-
+        
     }
 
     /**
@@ -173,7 +174,7 @@ public class Refresh {
      * @param strings array of Strings
      */
     public static ArrayList<String> exercise17(String[] strings) {
-        return null; // TODO: Change this return value
+        return null; // TODO: Change return value
     }
 
     /**
@@ -181,7 +182,7 @@ public class Refresh {
      *
      * @param fileName Full name of a file stored in the working directory of the project
      */
-    public static void exercise18(String fileName) {
+    public static void exercise18(String fileName) throws FileNotFoundException {
 
     }
 
@@ -192,7 +193,7 @@ public class Refresh {
      * @return maximum element of the input array
      */
     public static double exercise19(double[] numbers) {
-        return -1; // TODO: Change this return value
+        return -1; // TODO: Change return value
     }
 
     /**
@@ -203,7 +204,7 @@ public class Refresh {
      * @return minimum element of the input list
      */
     public static int exercise20(ArrayList<Integer> numbers) {
-        return -1; // TODO: Change this return value
+        return -1; // TODO: Change return value
     }
 
     /**
