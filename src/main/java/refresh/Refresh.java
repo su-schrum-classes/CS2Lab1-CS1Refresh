@@ -9,7 +9,7 @@ public class Refresh {
      * Prints "Hello World!" to the console
      */
     public static void exercise1() {
-
+        
     }
 
     /**

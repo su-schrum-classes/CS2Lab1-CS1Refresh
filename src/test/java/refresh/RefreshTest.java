@@ -1,14 +1,40 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
+import java.io.*;
+import refresh.Refresh;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
 class RefreshTest {
 
+    PrintStream outputConsole;
+    ByteArrayOutputStream byteOutputStream;
+
+    @BeforeEach
+    void backupConsole() {
+        // Create a stream to hold the output
+        byteOutputStream = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(byteOutputStream);
+        // IMPORTANT: Save the old System.out!
+        outputConsole = System.out;
+        // Tell Java to use your special stream
+        System.setOut(ps);
+    }
+
+    @AfterEach
+    void restoreConsole() {
+        // Put things back
+        System.out.flush();
+        System.setOut(outputConsole);
+    }
+
     @Test
     void testExercise1() {
-
+        Refresh.exercise1();
+        assertEquals("Hello World!"+System.lineSeparator(), byteOutputStream.toString());
     }
 	
     @Test
