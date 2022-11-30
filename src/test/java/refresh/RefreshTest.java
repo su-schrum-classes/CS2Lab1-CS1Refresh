@@ -2,6 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
 import java.io.*;
+import java.lang.reflect.*;
 import refresh.Refresh;
 
 import org.junit.jupiter.api.Test;
@@ -123,23 +124,81 @@ class RefreshTest {
     }
 
     @Test
-    void testExercise9() {
-        
+    void testExercise9() throws Exception {
+        Class<?> rect = Refresh.Rectangle.class;
+        Constructor<?> cons = rect.getConstructor(Double.TYPE, Double.TYPE);
+        Object o = cons.newInstance(2.5,4.7);
+        Method width = rect.getMethod("getWidth", new Class[0]);
+        assertEquals(2.5, width.invoke(o,new Object[0]));
+        Method height = rect.getMethod("getHeight", new Class[0]);
+        assertEquals(4.7, height.invoke(o,new Object[0]));
+        Method area = rect.getMethod("getArea", new Class[0]);
+        assertEquals(11.75, area.invoke(o,new Object[0]));
     }
 
     @Test
     void testExercise10() {
-        
+        Refresh.exercise10(new int[]{1,2,4,7});
+        Refresh.exercise10(new int[]{100,-234,2203,1,0,0,234});
+        Refresh.exercise10(new int[]{-100, -200, -32});
+        Refresh.exercise10(new int[0]);
+        assertEquals("14"+System.lineSeparator()+
+                     "2304"+System.lineSeparator()+
+                     "-332"+System.lineSeparator()+
+                     "0"+System.lineSeparator(), byteOutputStream.toString());
     }
 
     @Test
     void testExercise11() {
-        
+        Refresh.exercise11("Hello");
+        Refresh.exercise11("testing");
+        Refresh.exercise11("a sentence with words");
+        assertEquals("H"+System.lineSeparator()+
+                     "e"+System.lineSeparator()+
+                     "l"+System.lineSeparator()+
+                     "l"+System.lineSeparator()+
+                     "o"+System.lineSeparator()+
+                     "t"+System.lineSeparator()+
+                     "e"+System.lineSeparator()+
+                     "s"+System.lineSeparator()+
+                     "t"+System.lineSeparator()+
+                     "i"+System.lineSeparator()+
+                     "n"+System.lineSeparator()+
+                     "g"+System.lineSeparator()+
+                     "a"+System.lineSeparator()+
+                     " "+System.lineSeparator()+
+                     "s"+System.lineSeparator()+
+                     "e"+System.lineSeparator()+
+                     "n"+System.lineSeparator()+
+                     "t"+System.lineSeparator()+
+                     "e"+System.lineSeparator()+
+                     "n"+System.lineSeparator()+
+                     "c"+System.lineSeparator()+
+                     "e"+System.lineSeparator()+
+                     " "+System.lineSeparator()+
+                     "w"+System.lineSeparator()+
+                     "i"+System.lineSeparator()+
+                     "t"+System.lineSeparator()+
+                     "h"+System.lineSeparator()+
+                     " "+System.lineSeparator()+
+                     "w"+System.lineSeparator()+
+                     "o"+System.lineSeparator()+
+                     "r"+System.lineSeparator()+
+                     "d"+System.lineSeparator()+
+                     "s"+System.lineSeparator(), byteOutputStream.toString());
     }
 
     @Test
-    void testExercise12() {
-        
+    void testExercise12() throws Exception {
+        InputStream stdin = System.in;
+        try {
+            ByteArrayInputStream bais = new ByteArrayInputStream("27\n123\n");
+            System.setIn(bais);
+            Refresh.exercise12();
+            assertEquals("3321"+System.lineSeparator(), byteOutputStream.toString());
+        } finally {
+            System.setIn(stdin);
+        }
     }
 
     @Test
