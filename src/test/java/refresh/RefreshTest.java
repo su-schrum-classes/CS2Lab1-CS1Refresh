@@ -288,13 +288,16 @@ class RefreshTest {
     void testExercise19() {
         assertEquals(100.0, Refresh.exercise19(new double[]{100.0}));
         assertEquals(-100.0, Refresh.exercise19(new double[]{-100.0}));
-        assertEquals(456, Refresh.exercise19(new double[]{1,2,3,6,456,100.0,3,34}));
-        assertEquals(-1, Refresh.exercise19(new double[]{-1,-2,-3,-6,-456,-100.0,-3,-34}));
+        assertEquals(456, Refresh.exercise19(new double[]{1,2,3.435,6,456,100.0,3,34}));
+        assertEquals(-1, Refresh.exercise19(new double[]{-1,-2,-3.34,-6,-456,-100.0,-3,-34}));
     }
 
     @Test
     void testExercise20() {
-        
+        assertEquals(100, Refresh.exercise20(IntStream.of(new int[]{100}).boxed().collect(Collectors.toCollection(ArrayList::new))));
+        assertEquals(-100, Refresh.exercise20(IntStream.of(new int[]{-100}).boxed().collect(Collectors.toCollection(ArrayList::new))));
+        assertEquals(1, Refresh.exercise20(IntStream.of(new int[]{1,2,3,6,456,100,3,34}).boxed().collect(Collectors.toCollection(ArrayList::new))));
+        assertEquals(-456, Refresh.exercise20(IntStream.of(new int[]{-1,-2,-3,-6,-456,-100,-3,-34}).boxed().collect(Collectors.toCollection(ArrayList::new))));
     }
 
     @Test
