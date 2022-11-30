@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
+import java.util.stream.*;
 import java.io.*;
 import java.lang.reflect.*;
 import refresh.Refresh;
@@ -192,7 +193,7 @@ class RefreshTest {
     void testExercise12() throws Exception {
         InputStream stdin = System.in;
         try {
-            ByteArrayInputStream bais = new ByteArrayInputStream("27\n123\n");
+            ByteArrayInputStream bais = new ByteArrayInputStream("27\n123\n".getBytes());
             System.setIn(bais);
             Refresh.exercise12();
             assertEquals("3321"+System.lineSeparator(), byteOutputStream.toString());
@@ -203,27 +204,69 @@ class RefreshTest {
 
     @Test
     void testExercise13() {
-        
+        assertEquals(14,Refresh.exercise13(IntStream.of(new int[]{1,2,4,7}).boxed().collect(Collectors.toCollection(ArrayList::new))));
+        assertEquals(2304,Refresh.exercise13(IntStream.of(new int[]{100,-234,2203,1,0,0,234}).boxed().collect(Collectors.toCollection(ArrayList::new))));
+        assertEquals(-332,Refresh.exercise13(IntStream.of(new int[]{-100, -200, -32}).boxed().collect(Collectors.toCollection(ArrayList::new))));
+        assertEquals(0,Refresh.exercise13(IntStream.of(new int[0]).boxed().collect(Collectors.toCollection(ArrayList::new))));
     }
 
     @Test
     void testExercise14() {
-        
+        assertEquals(1, Refresh.exercise14(0));
+        assertEquals(1, Refresh.exercise14(1));
+        assertEquals(2, Refresh.exercise14(2));
+        assertEquals(6, Refresh.exercise14(3));
+        assertEquals(24, Refresh.exercise14(4));
+        assertEquals(3628800, Refresh.exercise14(10));
     }
 
     @Test
     void testExercise15() {
-        
+        Refresh.exercise15(new int[]{1,2,4,7});
+        Refresh.exercise15(new int[]{100,-234,2203,1,0,0,234});
+        Refresh.exercise15(new int[]{-100, 3, -200, -5, -32});
+        Refresh.exercise15(new int[0]);
+        assertEquals("2"+System.lineSeparator()+
+                     "4"+System.lineSeparator()+
+                     "100"+System.lineSeparator()+
+                     "-234"+System.lineSeparator()+
+                     "0"+System.lineSeparator()+
+                     "0"+System.lineSeparator()+
+                     "234"+System.lineSeparator()+
+                     "-100"+System.lineSeparator()+
+                     "-200"+System.lineSeparator()+
+                     "-32"+System.lineSeparator(), byteOutputStream.toString());
     }
 
     @Test
     void testExercise16() {
-        
+        Refresh.exercise16(new String[]{"Here","is","a","test"});
+        Refresh.exercise16(new String[]{"words","in","an","array"});
+        Refresh.exercise16(new String[]{"I","can","use","odd","words"});
+        Refresh.exercise16(new String[0]);
+        assertEquals("Here"+System.lineSeparator()+
+                     "is"+System.lineSeparator()+
+                     "test"+System.lineSeparator()+
+                     "in"+System.lineSeparator()+
+                     "an"+System.lineSeparator(), byteOutputStream.toString());
     }
 
     @Test
     void testExercise17() {
-        
+        ArrayList<String> answer;
+        ArrayList<String> result;
+        answer = Arrays.stream(new String[]{"a"}).collect(Collectors.toCollection(ArrayList::new));
+        result = Refresh.exercise17(new String[]{"Here","is","a","test"});
+        assertEquals(answer,result);
+        answer = Arrays.stream(new String[]{"words","array"}).collect(Collectors.toCollection(ArrayList::new));
+        result = Refresh.exercise17(new String[]{"words","in","an","array"});
+        assertEquals(answer,result);
+        answer = Arrays.stream(new String[]{"I","can","use","odd","words"}).collect(Collectors.toCollection(ArrayList::new));
+        result = Refresh.exercise17(new String[]{"I","can","use","odd","words"});
+        assertEquals(answer,result);
+        answer = Arrays.stream(new String[0]).collect(Collectors.toCollection(ArrayList::new));
+        result = Refresh.exercise17(new String[0]);
+        assertEquals(answer,result);
     }
 
     @Test
