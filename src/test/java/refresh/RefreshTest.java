@@ -270,8 +270,18 @@ class RefreshTest {
     }
 
     @Test
-    void testExercise18() {
-        
+    void testExercise18() throws Exception {
+        Refresh.exercise18("test_file.txt");
+        assertEquals("This is an example text file."+System.lineSeparator()+
+                     ""+System.lineSeparator()+
+                     "It has lots of text."+System.lineSeparator()+
+                     "It is used to test exercise 18."+System.lineSeparator()+
+                     ""+System.lineSeparator()+
+                     "Here is some random math: 4 + 5 = 9"+System.lineSeparator()+
+                     ""+System.lineSeparator()+        
+                     "!!!!!!!!!!!!!!!!!!!"+System.lineSeparator()+
+                     ""+System.lineSeparator()+        
+                     "END"+System.lineSeparator(), byteOutputStream.toString());
     }
 
     @Test
