@@ -301,8 +301,15 @@ class RefreshTest {
     }
 
     @Test
-    void testExercise21() {
-        
+    void testExercise21() throws Exception {
+        File f = new File("output.txt");
+        if(f.exists()) f.delete();
+        Refresh.exercise21();
+        Scanner s = new Scanner(f);
+        assertEquals("TEST",s.nextLine());
+        assertFalse(s.hasNextLine());
+        s.close();
+        if(f.exists()) f.delete();
     }
 
 }
