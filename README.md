@@ -17,3 +17,17 @@ gradle test
 Given that you are starting from scratch, this should report that the build failed. All of the exercises will be listed with a stack trace detailing exactly how the output produced by your code differs from what was expected. As you succesfully complete the exercises in `Refresh.java`, the red FAILED messages will change to green PASSED messages.
 
 The actual tests being executed are in `src/test/java/refresh/RefreshTest.java`. There is a test method associated with each exercise in this file, and each method has one or more assertion commands that indicate that some output is expected from running the code.
+
+## Saving your work
+
+Changes to files in a GitHub codespace are saved within that codespace automatically, but they are not saved to your repository automatically. You will only be able to see the changes in the codespace itself and not within the associated repository, but codespaces eventually get deleted after being inactive for too long. To save your work permanently, you need to commit and push your changes using command line `git` commands. This will present a bit of a technical hurdle, but hopefully you will become used to it in time.
+
+You will learn a lot about using GitHub in future classes, but for this one you simply need to know some basic commands to get by. Whenever you want to save your work and save your most up-to-date changes to your GitHub repo, execute the following sequence of three commands by typing them in the terminal and pressing enter after each one.
+
+```
+git add *
+git commit -m "Updated code"
+git push
+```
+
+If these three commands do not all succeed, then your code is not in the repository yet. If any of these commands give errors indicating that the code cannot be added, committed, or pushed, then let me know so that I can help.
