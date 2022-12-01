@@ -1,10 +1,11 @@
+package refresh;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
 import java.util.stream.*;
 import java.io.*;
 import java.lang.reflect.*;
-import refresh.Refresh;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
