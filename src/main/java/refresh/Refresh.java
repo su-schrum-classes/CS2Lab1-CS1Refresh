@@ -5,6 +5,10 @@ import java.io.*;
 
 public class Refresh {
 
+    public static void main(String[] args) {
+        // If you want to run a particular exercise, add code here.
+    }
+
     /**
      * Prints "Hello World!" to the console
      */
